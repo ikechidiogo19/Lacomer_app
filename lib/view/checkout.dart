@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_widget.dart';
@@ -70,7 +72,7 @@ class Checkout extends StatelessWidget {
             ),
             DefaultButton(
                 press: () {
-                  Get.to(() => Payment());
+                  Get.to(() => const Payment());
                 },
                 child: Text(
                   "Pay",

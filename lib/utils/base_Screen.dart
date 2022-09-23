@@ -19,7 +19,11 @@ class _BasescreenState extends State<Basescreen> {
   final CartController cartcontroller = Get.find();
   final NavController navController = Get.find();
   int _selectedindex = 0;
-  static List<Widget> screens = [DiscoverPage(), Checkout(), CartScreen()];
+  static List<Widget> screens = [
+    const DiscoverPage(),
+    Checkout(),
+    CartScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +31,12 @@ class _BasescreenState extends State<Basescreen> {
         child: screens.elementAt(_selectedindex),
       ),
       bottomNavigationBar: BubbleBottomBar(
-        tilesPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        borderRadius: BorderRadius.only(
+        tilesPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         elevation: 8,
         items: <BubbleBottomBarItem>[
-          BubbleBottomBarItem(
+          const BubbleBottomBarItem(
               backgroundColor: kprimarycolor,
               icon: Icon(
                 Icons.access_time,
@@ -43,7 +47,7 @@ class _BasescreenState extends State<Basescreen> {
                 color: kprimarycolor,
               ),
               title: Text("Discover")),
-          BubbleBottomBarItem(
+          const BubbleBottomBarItem(
               backgroundColor: Colors.deepPurple,
               icon: Icon(
                 Icons.favorite_border,
@@ -61,26 +65,26 @@ class _BasescreenState extends State<Basescreen> {
               showBadge: true,
               badgeColor: kprimarycolor,
               backgroundColor: Colors.indigo,
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
                 color: Colors.black,
               ),
-              activeIcon: Icon(
+              activeIcon: const Icon(
                 Icons.shopping_cart,
                 color: Colors.indigo,
               ),
-              title: Text("Cart")),
+              title: const Text("Cart")),
         ],
         opacity: .2,
         currentIndex: _selectedindex,
         onTap: (int? index) {
-          // navController.navbar(index!);
+          // navController.navbar(index, _selectedindex);
           setState(() {
             _selectedindex = index!;
           });
         },
       ),
-      drawer: Drawer(backgroundColor: kprimarycolor),
+      drawer: const Drawer(backgroundColor: kprimarycolor),
     );
   }
 }

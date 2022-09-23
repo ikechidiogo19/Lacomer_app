@@ -35,22 +35,22 @@ class _RestDetailsState extends State<RestDetails> {
                   .copyWith(color: ktextcolor, fontWeight: FontWeight.w600),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ), //
 
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) {
-                return Divider(
+                return const Divider(
                   thickness: 1.5,
                 );
               },
               itemCount: widget.restitems.menu!.length,
               shrinkWrap: true,
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               scrollDirection: Axis.vertical,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (
                 context,
                 index,
@@ -66,7 +66,7 @@ class _RestDetailsState extends State<RestDetails> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.shopping_cart),
+        child: const Icon(Icons.shopping_cart),
         backgroundColor: kprimarycolor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,

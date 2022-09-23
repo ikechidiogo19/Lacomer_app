@@ -35,7 +35,7 @@ class CartScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Slidable(
                       endActionPane:
-                          ActionPane(motion: StretchMotion(), children: [
+                          ActionPane(motion: const StretchMotion(), children: [
                         SlidableAction(
                           onPressed: (context) {
                             cartController
@@ -52,7 +52,7 @@ class CartScreen extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
-                    return Divider(
+                    return const Divider(
                       thickness: 1,
                     );
                   },
@@ -70,12 +70,13 @@ class CartScreen extends StatelessWidget {
                     GetX<CartController>(builder: (controller) {
                       return Text(
                         "\$${controller.totalprice.toStringAsFixed(2)}",
-                        style: TextStyle(color: klighttextcolor, fontSize: 20),
+                        style: const TextStyle(
+                            color: klighttextcolor, fontSize: 20),
                       );
                     }),
-                    Text("Begin Check out now",
+                    const Text("Begin Check out now",
                         style: TextStyle(color: klighttextcolor, fontSize: 20)),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
                       color: klighttextcolor,
                     )

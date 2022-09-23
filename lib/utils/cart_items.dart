@@ -28,7 +28,7 @@ class CartItem extends StatelessWidget {
                     .headline5!
                     .copyWith(fontWeight: FontWeight.bold, color: ktextcolor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text.rich(TextSpan(
@@ -39,7 +39,7 @@ class CartItem extends StatelessWidget {
                     const TextSpan(text: "    "),
                     const TextSpan(text: ".300 Cal")
                   ])),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
             ],
@@ -51,13 +51,13 @@ class CartItem extends StatelessWidget {
                   stateController.decrement(cartitems);
                 },
                 child: Container(
-                  child: Icon(Icons.remove),
+                  child: const Icon(Icons.remove),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                       border: Border.all(color: const Color(0xff8a8a8a))),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Obx(() {
@@ -65,11 +65,11 @@ class CartItem extends StatelessWidget {
                     badgeColor: kprimarycolor,
                     badgeContent: Text(
                       "${cartitems.quantity.value}X",
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                     child: Image.asset(cartitems.img));
               }),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               GestureDetector(
@@ -77,9 +77,9 @@ class CartItem extends StatelessWidget {
                   stateController.increment(cartitems);
                 },
                 child: Container(
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                       border: Border.all(color: const Color(0xff8a8a8a))),
                 ),
               ),

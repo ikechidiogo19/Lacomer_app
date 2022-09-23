@@ -23,7 +23,7 @@ class DefaultButton extends StatelessWidget {
         child: Center(
           child: child,
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: kprimarycolor,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),

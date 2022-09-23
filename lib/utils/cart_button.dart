@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lacomer_app/model/food_model.dart';
@@ -26,8 +28,9 @@ class CartButton extends StatelessWidget {
         height: 50,
         width: size.width * 0.85,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+          borderRadius: const BorderRadius.only(
+              topLeft: const Radius.circular(15),
+              bottomLeft: const Radius.circular(15)),
           border: Border.all(color: const Color(0xff8a8a8a)),
         ),
         child: Center(

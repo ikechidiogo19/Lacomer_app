@@ -9,9 +9,9 @@ import '../controller/state_controller.dart';
 import '../utils/cart_button.dart';
 import '../utils/default_button.dart';
 import '../utils/star.dart';
+import 'package:lacomer_app/view/checkout.dart';
 
 class DetailsPage extends StatelessWidget {
-  static String routename = "/Details";
   DetailsPage({Key? key, required this.fooddetails}) : super(key: key);
   final Food fooddetails;
 
@@ -22,9 +22,9 @@ class DetailsPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Icon(Icons.search),
           )
         ],
@@ -34,7 +34,7 @@ class DetailsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +53,7 @@ class DetailsPage extends StatelessWidget {
                             ))),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -63,30 +63,30 @@ class DetailsPage extends StatelessWidget {
                       .headlineLarge!
                       .copyWith(fontWeight: FontWeight.bold, color: ktextcolor),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Star(),
-                SizedBox(
+                const Star(),
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "300 Cal",
                       style: TextStyle(color: Colors.grey, fontSize: 24),
                     ),
                     Text(
                       "\$${fooddetails.price.toString()}",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: ktextcolor,
                         fontSize: 24,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
@@ -99,7 +99,7 @@ class DetailsPage extends StatelessWidget {
                       child: Container(
                         height: 50,
                         width: 50,
-                        child: Icon(
+                        child: const Icon(
                           Icons.remove,
                           color: Colors.grey,
                         ),
@@ -112,14 +112,14 @@ class DetailsPage extends StatelessWidget {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: kprimarycolor,
                           borderRadius: BorderRadius.all(Radius.circular(8))),
                       child: FittedBox(
                         child: Obx(() {
                           return Text(
                             fooddetails.quantity.value.toString(),
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           );
                         }),
                       ),
@@ -131,7 +131,7 @@ class DetailsPage extends StatelessWidget {
                       child: Container(
                         height: 50,
                         width: 50,
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                           color: Colors.grey,
                         ),
@@ -143,7 +143,7 @@ class DetailsPage extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
               ],
@@ -153,11 +153,13 @@ class DetailsPage extends StatelessWidget {
           CartButton(
             items: fooddetails,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           DefaultButton(
-            press: () {},
+            press: () {
+              Get.to(() => Checkout());
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -168,7 +170,7 @@ class DetailsPage extends StatelessWidget {
                       .headline6!
                       .copyWith(color: klighttextcolor),
                 ),
-                Icon(
+                const Icon(
                   Icons.arrow_forward_ios,
                   color: klighttextcolor,
                 )

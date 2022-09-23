@@ -24,7 +24,7 @@ class Bannerimg extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover, image: AssetImage(restitems.banner!)),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15)),
           ),
@@ -52,11 +52,11 @@ class Bannerimg extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back,
                       color: klighttextcolor,
                     )),
-                Icon(
+                const Icon(
                   Icons.search,
                   color: klighttextcolor,
                 )
@@ -70,9 +70,9 @@ class Bannerimg extends StatelessWidget {
               children: [
                 Text(
                   restitems.name,
-                  style: TextStyle(color: klighttextcolor, fontSize: 30),
+                  style: const TextStyle(color: klighttextcolor, fontSize: 30),
                 ),
-                Text(
+                const Text(
                   "Open 9 - 10pm",
                   style: TextStyle(color: klighttextcolor, fontSize: 15),
                 )

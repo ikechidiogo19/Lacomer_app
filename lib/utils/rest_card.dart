@@ -25,7 +25,7 @@ class RestTile extends StatelessWidget {
             height: 90,
             width: 100,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
@@ -35,7 +35,7 @@ class RestTile extends StatelessWidget {
                 .headlineSmall!
                 .copyWith(fontWeight: FontWeight.w600, color: ktextcolor),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
